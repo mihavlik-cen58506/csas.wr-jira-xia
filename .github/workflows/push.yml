@@ -84,7 +84,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
 
-      - name: Build test image (target: test)
+      - name: "Build test image (target: test)"
         uses: docker/build-push-action@v7
         with:
           context: .
@@ -93,7 +93,7 @@ jobs:
           tags: ${{ env.KBC_DEVELOPERPORTAL_APP }}:test
           outputs: type=docker,dest=/tmp/${{ env.KBC_DEVELOPERPORTAL_APP }}-test.tar
 
-      - name: Build production image (target: production)
+      - name: "Build production image (target: production)"
         uses: docker/build-push-action@v7
         with:
           context: .
