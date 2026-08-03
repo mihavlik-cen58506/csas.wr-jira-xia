@@ -16,6 +16,4 @@ jobs:
       vendor: csas
       test_build_target: test
       docker_build_target: production
-    secrets:
-      KBC_DEVELOPERPORTAL_PASSWORD: ${{ secrets.KBC_DEVELOPERPORTAL_PASSWORD }}
-
+    secrets: inherit
