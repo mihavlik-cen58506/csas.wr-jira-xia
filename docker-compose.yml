@@ -1,0 +1,17 @@
+services:
+  # for development purposes
+  dev:
+    build: .
+    volumes:
+        - ./:/code
+    environment:
+      - KBC_DATADIR=${KBC_DATADIR:-./component_config/sample-config}
+  test:
+    # Use to run flake8 and unittests checks
+    build: .
+    volumes:
+      - ./:/code
+    environment:
+      - KBC_DATADIR=${KBC_DATADIR:-./component_config/sample-config}
+    command:
+      - python -m pytest tests/ --tb=short -q

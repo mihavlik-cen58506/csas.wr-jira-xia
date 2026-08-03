@@ -1,0 +1,16 @@
+{
+    "id": "in.c-xia.XIA_REQUEST_ITEMS",
+    "name": "XIA_REQUEST_ITEMS",
+    "primary_key": ["XIA_REQUEST_KEY", "ISSUE_ID"],
+    "columns": [
+        "XIA_REQUEST_KEY",
+        "ISSUE_ID",
+        "SOURCE_SPACE_KEY",
+        "ITEM_STATUS",
+        "ERROR_CODE",
+        "ERROR_MESSAGE",
+        "EXECUTED_DATETIME",
+        "UPDATED_BY",
+        "UPDATED_DATETIME"
+    ]
+}

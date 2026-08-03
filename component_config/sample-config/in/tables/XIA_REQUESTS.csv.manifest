@@ -1,0 +1,6 @@
+{
+    "id": "in.c-xia.XIA_REQUESTS",
+    "name": "XIA_REQUESTS",
+    "primary_key": ["KEY"],
+    "columns": ["KEY", "REQUEST_REF", "OPERATION_TYPE", "STATUS", "UPDATED_BY", "UPDATED_DATETIME"]
+}

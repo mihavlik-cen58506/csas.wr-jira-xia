@@ -1,0 +1,44 @@
+{
+  "storage": {
+    "input": {
+      "files": [],
+      "tables": [
+        {
+          "source": "in.c-xia.XIA_REQUESTS",
+          "destination": "XIA_REQUESTS.csv"
+        },
+        {
+          "source": "in.c-xia.XIA_REQUEST_ITEMS",
+          "destination": "XIA_REQUEST_ITEMS.csv"
+        },
+        {
+          "source": "in.c-xia.XIA_RUNS",
+          "destination": "XIA_RUNS.csv"
+        }
+      ]
+    },
+    "output": {
+      "files": [],
+      "tables": [
+        {
+          "source": "XIA_REQUESTS.csv",
+          "destination": "out.c-xia.XIA_REQUESTS"
+        },
+        {
+          "source": "XIA_REQUEST_ITEMS.csv",
+          "destination": "out.c-xia.XIA_REQUEST_ITEMS"
+        },
+        {
+          "source": "XIA_RUNS.csv",
+          "destination": "out.c-xia.XIA_RUNS"
+        }
+      ]
+    }
+  },
+  "parameters": {
+    "JIRA_BASE_URL": "https://csas.atlassian.net",
+    "JIRA_USERNAME": "your-jira-username",
+    "#jira_api_token": "your-secret-token",
+    "debug": false
+  }
+}

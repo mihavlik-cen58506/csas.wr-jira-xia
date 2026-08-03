@@ -1,0 +1,18 @@
+__pycache__/
+.DS_Store
+.idea
+.pytest_cache
+.ruff_cache
+.venv
+.vscode
+*.py[cod]
+*.egg-info
+venv
+
+# kbc datafolder (local component_config/sample-config runs write here)
+/data
+component_config/sample-config/out/
+
+# never commit real secrets accidentally dropped locally
+secrets.json
+.env
