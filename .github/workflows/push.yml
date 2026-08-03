@@ -9,6 +9,26 @@ on:
 concurrency: ci-${{ github.ref }}
 
 jobs:
+  debug-secrets:
+    name: Debug - check secret visibility
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check KBC_DEVELOPERPORTAL_PASSWORD presence (never prints the value)
+        env:
+          PW: ${{ secrets.KBC_DEVELOPERPORTAL_PASSWORD }}
+          UN: ${{ vars.KBC_DEVELOPERPORTAL_USERNAME }}
+        run: |
+          if [ -z "$PW" ]; then
+            echo "RESULT: KBC_DEVELOPERPORTAL_PASSWORD is EMPTY in this workflow's own secrets context."
+          else
+            echo "RESULT: KBC_DEVELOPERPORTAL_PASSWORD is present, length=${#PW}"
+          fi
+          if [ -z "$UN" ]; then
+            echo "RESULT: KBC_DEVELOPERPORTAL_USERNAME is EMPTY."
+          else
+            echo "RESULT: KBC_DEVELOPERPORTAL_USERNAME is present, value length=${#UN}"
+          fi
+
   ci:
     uses: keboola/component-ci/.github/workflows/component-pipeline.yml@master
     with:
