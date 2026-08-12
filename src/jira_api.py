@@ -4,7 +4,6 @@ Ported from the reference transformation (script.py / context/XIA/xia_nightly_ma
 to preserve identical request/response handling and error parsing.
 """
 
-import base64
 import logging
 import time
 
@@ -75,11 +74,10 @@ def _parse_error_body(body):
 class JiraApiClient:
     """Minimal Jira REST API v3 client for the XIA nightly job."""
 
-    def __init__(self, base_url: str, username: str, api_token: str):
+    def __init__(self, base_url: str, api_token: str):
         self._base_url = base_url.rstrip("/")
-        credentials = base64.b64encode(f"{username}:{api_token}".encode()).decode()
         self._headers = {
-            "Authorization": f"Basic {credentials}",
+            "Authorization": f"Bearer {api_token}",
             "Accept": "application/json",
             "Content-Type": "application/json",
         }

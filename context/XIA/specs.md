@@ -58,12 +58,11 @@ Required implementation layout:
 
 ## 4. Runtime Contract
 
-### 4.1 Configuration parameters (exactly these 3)
+### 4.1 Configuration parameters (exactly these 2)
 
 Component must expose exactly these required parameters:
-- JIRA_BASE_URL
-- JIRA_USERNAME
-- JIRA_API_TOKEN
+- JIRA_BASE_URL (Jira API gateway base URL, e.g. https://api.atlassian.com/ex/jira/{cloud_id})
+- JIRA_API_TOKEN (service account API token)
 
 Security requirement:
 - JIRA_API_TOKEN must be encrypted in Keboola UI schema.
@@ -282,7 +281,7 @@ RUN_TYPE value for this component:
 ## 7. Jira API Contract
 
 Authentication:
-- HTTP Basic auth with JIRA_USERNAME:JIRA_API_TOKEN (base64 encoded)
+- Bearer token auth with JIRA_API_TOKEN (service account API token), sent as `Authorization: Bearer {JIRA_API_TOKEN}`
 
 Timeouts:
 - 30 seconds for each Jira HTTP request

@@ -8,7 +8,6 @@ class Configuration(BaseModel):
     """The 3 required Jira connection parameters, validated on load."""
 
     jira_base_url: str = Field(alias="JIRA_BASE_URL")
-    jira_username: str = Field(alias="JIRA_USERNAME")
     jira_api_token: str = Field(alias="#jira_api_token")
     debug: bool = False
 

@@ -31,13 +31,12 @@ aborts the rest of the job — that request is simply marked `FAILED` and proces
 Configuration
 =============
 
-Exactly 3 required parameters (see [component_config/configSchema.json](component_config/configSchema.json)):
+Exactly 2 required parameters (see [component_config/configSchema.json](component_config/configSchema.json)):
 
 | Parameter          | Description                                             |
 |---------------------|------------------------------------------------------------|
-| `JIRA_BASE_URL`     | Jira base URL, e.g. `https://your-domain.atlassian.net`. |
-| `JIRA_USERNAME`     | Jira account username/email used for Basic Auth.        |
-| `#jira_api_token`   | Jira API token (encrypted in Keboola UI).                |
+| `JIRA_BASE_URL`     | Jira API gateway base URL, e.g. `https://api.atlassian.com/ex/jira/{cloud_id}`. |
+| `#jira_api_token`   | Service account API token, sent as a Bearer token (encrypted in Keboola UI). |
 
 Input / output mapping
 =======================

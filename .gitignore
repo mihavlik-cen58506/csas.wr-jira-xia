@@ -13,6 +13,9 @@ venv
 /data
 component_config/sample-config/out/
 
+# local KBC_DATADIR with real Jira credentials/data - never commit
+component_config/local-config/
+
 # never commit real secrets accidentally dropped locally
 secrets.json
 .env

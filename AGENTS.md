@@ -17,7 +17,7 @@ Reference implementation (old Transformation this component replaces): [context/
 ## Source layout
 - `src/component.py` — entrypoint (`Component` class extending `ComponentBase`); resolves the
   3 tables, builds the `JiraApiClient`, calls `processor.process_pending_requests`, writes outputs.
-- `src/configuration.py` — Pydantic `Configuration` model (`JIRA_BASE_URL`, `JIRA_USERNAME`, `#jira_api_token`).
+- `src/configuration.py` — Pydantic `Configuration` model (`JIRA_BASE_URL`, `#jira_api_token`).
 - `src/jira_api.py` — Jira REST v3 client (JQL search, bulk move, task polling, error parsing).
 - `src/processor.py` — business orchestration: `process_pending_requests` (crash recovery + main
   loop), `process_request` / `_process_archive_test` (per-request flow), `_fail_request` (shared
@@ -26,7 +26,7 @@ Reference implementation (old Transformation this component replaces): [context/
 - `src/constants.py` — status/skip-reason/timing constants.
 
 ## Key domain rules
-- Exactly 3 config params: `JIRA_BASE_URL`, `JIRA_USERNAME`, `JIRA_API_TOKEN` (encrypted, alias `#jira_api_token`).
+- Exactly 2 config params: `JIRA_BASE_URL` (Jira API gateway URL, e.g. `https://api.atlassian.com/ex/jira/{cloud_id}`), `JIRA_API_TOKEN` (service account token, encrypted, alias `#jira_api_token`, sent as `Authorization: Bearer`).
 - Input/output tables are resolved by **case-insensitive substring match** on mapped table name
   (`XIA_REQUESTS`, `XIA_REQUEST_ITEMS`, `XIA_RUNS`), never hardcoded — fail fast with `UserException` if a role is missing/ambiguous.
 - Outputs are full-replace; unrecognized columns must pass through unchanged.

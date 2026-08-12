@@ -36,8 +36,7 @@
     }
   },
   "parameters": {
-    "JIRA_BASE_URL": "https://csas.atlassian.net",
-    "JIRA_USERNAME": "your-jira-username",
+    "JIRA_BASE_URL": "https://api.atlassian.com/ex/jira/cbe4f9f9-d272-491e-a196-3bba5c2dada0",
     "#jira_api_token": "your-secret-token",
     "debug": false
   }

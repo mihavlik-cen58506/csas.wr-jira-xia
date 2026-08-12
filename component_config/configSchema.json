@@ -4,26 +4,19 @@
   "description": "Revalidates queued Jira issues for pending XIA archive requests and bulk-moves eligible ones into the Jira XIA project.",
   "required": [
     "JIRA_BASE_URL",
-    "JIRA_USERNAME",
     "#jira_api_token"
   ],
   "properties": {
     "JIRA_BASE_URL": {
       "type": "string",
       "title": "Jira base URL:",
-      "description": "Base URL of your Jira Cloud instance, e.g. https://your-domain.atlassian.net",
+      "description": "Jira API gateway base URL, e.g. https://api.atlassian.com/ex/jira/{cloud_id}",
       "propertyOrder": 10
-    },
-    "JIRA_USERNAME": {
-      "type": "string",
-      "title": "Jira username:",
-      "description": "Jira account email/username used for Basic Auth together with the API token.",
-      "propertyOrder": 20
     },
     "#jira_api_token": {
       "type": "string",
       "title": "Jira API token:",
-      "description": "Jira API token for the account above. Obtain it from Jira Cloud account security settings.",
+      "description": "Service account API token, sent as a Bearer token. Obtain it from Atlassian admin.atlassian.com service account settings.",
       "format": "password",
       "propertyOrder": 30
     },

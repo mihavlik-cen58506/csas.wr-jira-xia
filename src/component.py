@@ -46,7 +46,7 @@ class Component(ComponentBase):
         csv_io.validate_required_columns(items_fields, TABLE_ROLE_REQUEST_ITEMS)
         csv_io.validate_required_columns(runs_fields, TABLE_ROLE_RUNS)
 
-        jira = JiraApiClient(params.jira_base_url, params.jira_username, params.jira_api_token)
+        jira = JiraApiClient(params.jira_base_url, params.jira_api_token)
 
         logging.info("XIA Nightly - starting.")
         process_pending_requests(jira, requests_rows, items_rows, runs_rows)

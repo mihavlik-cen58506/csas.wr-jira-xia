@@ -8,7 +8,9 @@ services:
       - KBC_DATADIR=${KBC_DATADIR:-./component_config/sample-config}
   test:
     # Use to run flake8 and unittests checks
-    build: .
+    build:
+      context: .
+      target: test
     volumes:
       - ./:/code
     environment:
